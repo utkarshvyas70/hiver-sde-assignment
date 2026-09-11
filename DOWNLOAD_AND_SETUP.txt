@@ -1,0 +1,316 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    📥 DOWNLOAD AND SETUP INSTRUCTIONS                        ║
+║              Hiver SDE Intern Assignment - Customer Support AI                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+IMPORTANT: Read this FIRST before doing anything!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: DOWNLOAD THE FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You have TWO options:
+
+OPTION A: Download as ZIP (Recommended - Easier)
+  1. Download: outputs.zip
+  2. Extract it to your computer
+  3. You'll have a folder called "outputs"
+  4. Skip to STEP 2
+
+OPTION B: Download Individual Files
+  1. Create a new folder on your computer: hiver-assignment
+  2. Download each file individually
+  3. Organize them as shown below in "FOLDER STRUCTURE"
+  4. Continue to STEP 2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 2: FOLDER STRUCTURE (After Download)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your downloaded folder should look like this:
+
+hiver-sde-assignment/
+│
+├── src/
+│   ├── __init__.py
+│   └── support_agent.py
+│
+├── data/
+│   └── golden_eval_set.json
+│
+├── README.md
+├── ASSIGNMENT_REPORT.docx
+├── DECISION_LOG.md
+├── QUICK_SUMMARY.txt
+├── START_HERE.md
+├── GITHUB_AND_SUBMISSION_GUIDE.md
+├── PRE_SUBMISSION_CHECKLIST.md
+├── DELIVERABLES_SUMMARY.txt
+├── evaluate.py
+├── test_agent.py
+├── config.json
+├── requirements.txt
+└── .gitignore
+
+CRITICAL: You need the .gitignore file! It's usually hidden.
+  • In Windows: Enable "Show hidden files" in View settings
+  • In Mac/Linux: Hidden files start with dot (.)
+  • In downloads, look for .gitignore file
+
+If .gitignore is missing, you MUST create it manually:
+  1. Create a new text file named ".gitignore"
+  2. Add these lines to it:
+     .env
+     __pycache__/
+     *.pyc
+     .DS_Store
+     results/
+     *.json.bak
+     .idea/
+     .vscode/
+     *.egg-info/
+     dist/
+     build/
+     .pytest_cache/
+     *.egg
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 3: OPEN IN VS CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open VS Code
+2. File → Open Folder
+3. Select your "hiver-sde-assignment" folder
+4. Click "Open"
+
+You should see the folder tree on the left showing all files.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 4: CREATE .env FILE (IMPORTANT!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In VS Code terminal:
+
+1. Create .env file:
+   touch .env
+
+2. Open it and add your OpenAI API key:
+   cat > .env << 'DOTENV'
+   OPENAI_API_KEY=sk-...your-actual-key-here...
+   DOTENV
+
+   (Replace sk-... with your actual key from OpenAI)
+
+3. Save the file
+
+4. Verify it's gitignored:
+   grep .env .gitignore
+   (Should show: .env)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 5: VERIFY EVERYTHING IS THERE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open VS Code terminal and run:
+
+  ls -la
+
+You should see all these files/folders:
+  ✓ src/
+  ✓ data/
+  ✓ .env (should NOT be visible in git, but can check: cat .env)
+  ✓ .gitignore
+  ✓ README.md
+  ✓ ASSIGNMENT_REPORT.docx
+  ✓ evaluate.py
+  ✓ test_agent.py
+  ✓ config.json
+  ✓ requirements.txt
+  ✓ All guide files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 6: TEST LOCALLY (Before pushing to GitHub!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In VS Code terminal:
+
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Run the test script:
+   python test_agent.py
+
+   Expected output:
+   - Shows 8 test messages
+   - Displays intent, reply, escalation decision
+   - NO ERRORS
+
+3. Run full evaluation:
+   python evaluate.py
+
+   Expected output:
+   - Takes <5 minutes
+   - Shows accuracy metrics
+   - Prints "Results saved to results/evaluation_results.json"
+   - NO ERRORS
+
+If both work without errors → You're ready for GitHub! ✓
+
+If there are errors:
+   • Check API key is set: echo $OPENAI_API_KEY
+   • Check all files are in place
+   • Check Python version: python --version (should be 3.8+)
+   • See PRE_SUBMISSION_CHECKLIST.md troubleshooting section
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 7: INITIALIZE GIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In VS Code terminal:
+
+1. Initialize git:
+   git init
+
+2. Add all files:
+   git add .
+
+3. Check what will be committed:
+   git status
+
+   You should see:
+   ✓ src/support_agent.py
+   ✓ data/golden_eval_set.json
+   ✓ evaluate.py
+   ✓ test_agent.py
+   ✓ All markdown files
+   ✗ .env (should NOT be listed - means it's gitignored!)
+   ✗ __pycache__/ (should NOT be listed)
+
+4. Create first commit:
+   git commit -m "Initial commit: Customer support AI agent with evaluation harness"
+
+5. Verify commit worked:
+   git log --oneline
+   (Should show 1 commit)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 8: PUSH TO GITHUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+On GitHub.com:
+
+1. Create new repository
+   • Go to github.com
+   • Click + icon (top right)
+   • Select "New repository"
+   • Name: hiver-sde-assignment
+   • Description: Customer Support AI Agent - Hiver SDE Intern Assignment
+   • Visibility: PUBLIC (not private!)
+   • Click "Create repository"
+
+2. You'll see instructions. Copy the URL. It looks like:
+   https://github.com/YOUR_USERNAME/hiver-sde-assignment.git
+
+In VS Code terminal:
+
+3. Add remote:
+   git remote add origin https://github.com/YOUR_USERNAME/hiver-sde-assignment.git
+
+4. Rename branch to main (if needed):
+   git branch -M main
+
+5. Push code:
+   git push -u origin main
+
+   First time might ask for authentication:
+   • If it asks for password: Generate Personal Access Token
+     - GitHub → Settings → Developer settings → Personal access tokens
+     - Generate token with "repo" scope
+     - Use that as password
+   • Or use SSH key (more advanced, look it up if needed)
+
+6. Verify on GitHub:
+   • Open: github.com/YOUR_USERNAME/hiver-sde-assignment
+   • Should see README.md displayed
+   • Should see all files listed
+   • Should see no .env file (good!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 9: SUBMIT TO HIVER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to Hiver submission form:
+   https://intelligent-bar-256.notion.site/39492cbf0da2800682cfc78a600a745f
+
+2. Fill out form with:
+   • Full Name: Your name
+   • Email: Your email
+   • GitHub Repository Link: 
+     https://github.com/YOUR_USERNAME/hiver-sde-assignment
+   • Report: Attach ASSIGNMENT_REPORT.docx
+   • Notes: "See README.md for setup and reproduction steps"
+
+3. Click Submit
+
+4. Check email (including spam folder) for confirmation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ DONE! 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Summary of what you did:
+  ✓ Downloaded files
+  ✓ Opened in VS Code
+  ✓ Created .env with API key
+  ✓ Tested code locally
+  ✓ Initialized git
+  ✓ Pushed to GitHub
+  ✓ Submitted to Hiver
+
+Wait for email 1-2 weeks. They'll ask you to explain/modify code.
+That's a good sign! 🚀
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: Can't see data/golden_eval_set.json after download
+Solution: Make sure you extracted the ZIP correctly. All folders should be visible.
+
+Problem: .gitignore file doesn't appear
+Solution: Hidden files. Enable viewing hidden files or create manually (see Step 2).
+
+Problem: "ModuleNotFoundError" when running test_agent.py
+Solution: pip install -r requirements.txt
+
+Problem: "OPENAI_API_KEY not found" error
+Solution: echo $OPENAI_API_KEY (check if set)
+         cat .env (verify .env file exists and has key)
+
+Problem: Can't push to GitHub
+Solution: Generate Personal Access Token at GitHub → Settings → Developer settings
+         Use that token when asked for password during git push
+
+Problem: Repository shows as private but you want public
+Solution: GitHub → Repository Settings → Danger Zone → Change to Public
+
+For more help, see:
+  • START_HERE.md
+  • PRE_SUBMISSION_CHECKLIST.md
+  • GITHUB_AND_SUBMISSION_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Good luck! You've got this! 🚀
+

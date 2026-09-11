@@ -1,0 +1,39 @@
+{
+  "brand": "Apple",
+  "model": "gpt-3.5-turbo",
+  "temperature": {
+    "classification": 0.3,
+    "generation": 0.7,
+    "complexity_assessment": 0.3
+  },
+  "intents": [
+    "billing_issue",
+    "device_issue",
+    "software_update",
+    "account_access",
+    "warranty_question",
+    "feature_question",
+    "order_tracking",
+    "compliment"
+  ],
+  "escalation_triggers": [
+    "refund",
+    "lawsuit",
+    "lawyer",
+    "angry",
+    "unacceptable",
+    "terrible",
+    "hate",
+    "scam",
+    "fraud",
+    "stolen",
+    "premium",
+    "urgent",
+    "asap"
+  ],
+  "max_message_length_auto_handle": 100,
+  "complexity_threshold": 3,
+  "dataset_source": "Twitter Customer Support (Kaggle)",
+  "evaluation_set_size": 150,
+  "max_reply_tokens": 100
+}

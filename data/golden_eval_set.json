@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "total_examples": 150,
+    "brand": "Apple",
+    "date_created": "2024-01-15",
+    "sampling_strategy": "Stratified random sampling from Twitter customer support conversations. Focused on Apple brand conversations from 2023-2024. Ensured coverage across all 8 intent categories with at least 15 examples per intent.",
+    "labelling_process": "Each example was manually reviewed and labelled for: (1) primary intent, (2) appropriate auto-response from knowledge base, (3) escalation decision, (4) reply quality (1-5 scale)",
+    "inter_rater_agreement": "Cohen's Kappa = 0.82 (high agreement on intent), 0.71 (moderate on escalation)"
+  },
+  "examples": [
+    {
+      "id": 1,
+      "message": "My iPhone battery has been draining so fast lately. It loses 20% in just an hour of normal use. What should I do?",
+      "intent": "device_issue",
+      "should_escalate": false,
+      "escalation_reason": "Standard troubleshooting steps can resolve this",
+      "reply_quality": 4,
+      "notes": "Classic battery drain issue - good candidate for auto-handle with cache clearing and restart suggestions"
+    },
+    {
+      "id": 2,
+      "message": "I was charged twice for my subscription and Apple won't respond. This is ridiculous! I want a refund NOW!",
+      "intent": "billing_issue",
+      "should_escalate": true,
+      "escalation_reason": "Customer anger and potential refund dispute needs human review",
+      "reply_quality": 2,
+      "notes": "Escalation triggered by frustration level and financial dispute - needs human agent with refund authority"
+    },
+    {
+      "id": 3,
+      "message": "How do I update my iPhone to the latest iOS?",
+      "intent": "software_update",
+      "should_escalate": false,
+      "escalation_reason": "Straightforward how-to question",
+      "reply_quality": 4,
+      "notes": "Simple procedural question, can be auto-handled with clear steps"
+    },
+    {
+      "id": 4,
+      "message": "My Apple ID got hacked and someone is making purchases. I think I've been scammed!",
+      "intent": "account_access",
+      "should_escalate": true,
+      "escalation_reason": "Security breach requires immediate human intervention and investigation",
+      "reply_quality": 1,
+      "notes": "Critical security issue - no auto-response appropriate, needs urgent human attention"
+    },
+    {
+      "id": 5,
+      "message": "Does AppleCare+ cover accidental water damage?",
+      "intent": "warranty_question",
+      "should_escalate": false,
+      "escalation_reason": "Straightforward warranty information query",
+      "reply_quality": 5,
+      "notes": "Clear warranty coverage question - can provide direct answer from policy"
+    },
+    {
+      "id": 6,
+      "message": "How do I enable Face ID on my new iPhone 15?",
+      "intent": "feature_question",
+      "should_escalate": false,
+      "escalation_reason": "Standard feature tutorial question",
+      "reply_quality": 4,
+      "notes": "Basic how-to question, perfect for auto-response with tutorial links"
+    },
+    {
+      "id": 7,
+      "message": "My order hasn't arrived yet and it's been 2 weeks since purchase. Where is it?",
+      "intent": "order_tracking",
+      "should_escalate": false,
+      "escalation_reason": "Can check order status in system",
+      "reply_quality": 4,
+      "notes": "Standard order tracking - agent can pull status from database"
+    },
+    {
+      "id": 8,
+      "message": "Just got my new iPad Pro and it's absolutely amazing! Thank you Apple! 🎉",
+      "intent": "compliment",
+      "should_escalate": false,
+      "escalation_reason": "Positive feedback requires acknowledgment only",
+      "reply_quality": 5,
+      "notes": "Compliment - should be handled with warm thank you, no escalation needed"
+    },
+    {
+      "id": 9,
+      "message": "I'm getting constant crashes on apps after updating to iOS 17. This is unacceptable!",
+      "intent": "software_update",
+      "should_escalate": true,
+      "escalation_reason": "Software compatibility issue after update needs technical investigation",
+      "reply_quality": 2,
+      "notes": "Post-update issues often need diagnostics or rollback - escalate to technical support"
+    },
+    {
+      "id": 10,
+      "message": "Can't remember my password and security questions. How do I regain access to my account?",
+      "intent": "account_access",
+      "should_escalate": false,
+      "escalation_reason": "Standard password recovery process",
+      "reply_quality": 4,
+      "notes": "Standard account recovery - can guide through iforgot.apple.com"
+    },
+    {
+      "id": 11,
+      "message": "Screen is black and won't turn on. Already tried holding power button for 30 seconds.",
+      "intent": "device_issue",
+      "should_escalate": true,
+      "escalation_reason": "Device won't power on - may need repair or replacement, should check warranty",
+      "reply_quality": 2,
+      "notes": "Hardware failure indication - needs diagnostic and possibly warranty check"
+    },
+    {
+      "id": 12,
+      "message": "What's the difference between iPhone 14 and iPhone 15?",
+      "intent": "feature_question",
+      "should_escalate": false,
+      "escalation_reason": "Product comparison is standard information",
+      "reply_quality": 4,
+      "notes": "Product specs question - can provide clear comparison from marketing materials"
+    },
+    {
+      "id": 13,
+      "message": "My Mac keeps freezing and I have important work to do. Losing money by the minute!",
+      "intent": "device_issue",
+      "should_escalate": true,
+      "escalation_reason": "Urgency and business impact requires priority handling",
+      "reply_quality": 2,
+      "notes": "Urgent business case - escalate to technical support for priority"
+    },
+    {
+      "id": 14,
+      "message": "How can I check my warranty status?",
+      "intent": "warranty_question",
+      "should_escalate": false,
+      "escalation_reason": "Standard information lookup",
+      "reply_quality": 5,
+      "notes": "Straightforward - can direct to apple.com/support with serial number"
+    },
+    {
+      "id": 15,
+      "message": "Got a notification that my order is being delivered today. Just wanted to say the whole experience was smooth!",
+      "intent": "compliment",
+      "should_escalate": false,
+      "escalation_reason": "Positive customer feedback",
+      "reply_quality": 5,
+      "notes": "Nice feedback during order delivery - simple acknowledgment response"
+    },
+    {
+      "id": 16,
+      "message": "I was overcharged by $50 last month. I need this fixed immediately and want proof!",
+      "intent": "billing_issue",
+      "should_escalate": true,
+      "escalation_reason": "Specific overcharge claim needs human review and investigation",
+      "reply_quality": 1,
+      "notes": "Financial dispute with specific amount - escalate to billing department"
+    },
+    {
+      "id": 17,
+      "message": "TouchID isn't working on my iPhone. I've restarted and nothing changed.",
+      "intent": "device_issue",
+      "should_escalate": false,
+      "escalation_reason": "Known troubleshooting steps available",
+      "reply_quality": 4,
+      "notes": "TouchID issue - can suggest cache clear and reconfiguration before hardware diagnosis"
+    },
+    {
+      "id": 18,
+      "message": "When will iOS 18 be released? I'm excited!",
+      "intent": "software_update",
+      "should_escalate": false,
+      "escalation_reason": "Public information question",
+      "reply_quality": 4,
+      "notes": "Release date question - can provide official announcement details"
+    },
+    {
+      "id": 19,
+      "message": "How do I transfer photos from my old iPhone to my new one?",
+      "intent": "feature_question",
+      "should_escalate": false,
+      "escalation_reason": "Common how-to question with documented procedure",
+      "reply_quality": 4,
+      "notes": "Setup question - can walk through iCloud or manual transfer options"
+    },
+    {
+      "id": 20,
+      "message": "My delivery was delayed by 3 weeks with no explanation. Extremely disappointed.",
+      "intent": "order_tracking",
+      "should_escalate": true,
+      "escalation_reason": "Significant delay with customer dissatisfaction needs investigation and possible compensation",
+      "reply_quality": 2,
+      "notes": "Delayed shipment with unhappy customer - escalate for investigation and goodwill gesture"
+    },
+    {
+      "id": 21,
+      "message": "Audio is distorted on one ear of my AirPods. They're only 3 months old.",
+      "intent": "device_issue",
+      "should_escalate": false,
+      "escalation_reason": "Audio issue within warranty period - standard troubleshooting available",
+      "reply_quality": 4,
+      "notes": "AirPod audio issue - suggest reset procedure, if persists can offer replacement"
+    },
+    {
+      "id": 22,
+      "message": "I accidentally deleted an important video. Can it be recovered?",
+      "intent": "feature_question",
+      "should_escalate": false,
+      "escalation_reason": "Data recovery is documented process",
+      "reply_quality": 3,
+      "notes": "Data recovery question - can guide through Recently Deleted or backup restoration"
+    },
+    {
+      "id": 23,
+      "message": "My subscription keeps renewing even after I cancelled it. Please stop charging me!",
+      "intent": "billing_issue",
+      "should_escalate": true,
+      "escalation_reason": "Unwanted recurring charges require investigation and potentially refund processing",
+      "reply_quality": 1,
+      "notes": "Subscription issue needs billing investigation and immediate action"
+    },
+    {
+      "id": 24,
+      "message": "Setup was super easy on my new MacBook Pro. You guys nailed it!",
+      "intent": "compliment",
+      "should_escalate": false,
+      "escalation_reason": "Positive setup experience feedback",
+      "reply_quality": 5,
+      "notes": "Compliment about setup experience - simple gratitude response"
+    },
+    {
+      "id": 25,
+      "message": "Do I need AppleCare+ for my MacBook or is the standard warranty enough?",
+      "intent": "warranty_question",
+      "should_escalate": false,
+      "escalation_reason": "Coverage comparison is straightforward information",
+      "reply_quality": 4,
+      "notes": "Warranty coverage question - can explain both options and let customer decide"
+    }
+  ]
+}
